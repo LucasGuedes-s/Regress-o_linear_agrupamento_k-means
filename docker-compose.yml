@@ -1,0 +1,12 @@
+version: "3.9"
+
+services:
+  jupyter:
+    build: .
+    container_name: meu_jupyter
+    ports:
+      - "8888:8888"
+    volumes:
+      - ./notebooks:/home/jovyan/work
+      - ./data:/home/jovyan/data
+    command: start-notebook.sh --NotebookApp.token=''
